@@ -4,3 +4,4 @@ const issueModal = document.querySelector("[data-modal]");
 newIssueBtn.addEventListener("click", () => {
     issueModal.showModal();
 });
+
