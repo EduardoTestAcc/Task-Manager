@@ -70,3 +70,11 @@
 127.0.0.1 - - [09/Jul/2023:22:16:35 -0400] "POST /manager/index.jsp HTTP/1.1" 200 2370 http-bio-9090-exec-4 262
 127.0.0.1 - - [09/Jul/2023:22:19:19 -0400] "POST /manager/index.jsp HTTP/1.1" 200 2448 http-bio-9090-exec-10 26
 127.0.0.1 - - [09/Jul/2023:22:19:19 -0400] "GET /manager/js/home.js HTTP/1.1" 304 - http-bio-9090-exec-10 1
+127.0.0.1 - - [09/Jul/2023:22:25:36 -0400] "GET /manager/ HTTP/1.1" 200 2409 http-bio-9090-exec-1 1580
+127.0.0.1 - - [09/Jul/2023:22:25:36 -0400] "GET /manager/js/home.js HTTP/1.1" 304 - http-bio-9090-exec-2 6
+127.0.0.1 - - [09/Jul/2023:22:26:36 -0400] "POST /manager/index.jsp HTTP/1.1" 200 2606 http-bio-9090-exec-3 28
+127.0.0.1 - - [09/Jul/2023:22:27:21 -0400] "POST /manager/index.jsp HTTP/1.1" 200 2590 http-bio-9090-exec-4 192
+127.0.0.1 - - [09/Jul/2023:22:27:41 -0400] "GET /manager/index.jsp HTTP/1.1" 200 2650 http-bio-9090-exec-5 49
+127.0.0.1 - - [09/Jul/2023:22:27:46 -0400] "GET /manager/ HTTP/1.1" 200 2710 http-bio-9090-exec-6 38
+127.0.0.1 - - [09/Jul/2023:22:27:53 -0400] "GET /manager/ HTTP/1.1" 200 2770 http-bio-9090-exec-7 53
+127.0.0.1 - - [09/Jul/2023:22:27:54 -0400] "GET /manager/ HTTP/1.1" 200 2830 http-bio-9090-exec-8 16
