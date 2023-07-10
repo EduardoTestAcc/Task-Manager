@@ -5,13 +5,11 @@
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
-
 <sql:setDataSource var = "database" driver = "com.mysql.jdbc.Driver"
 url = "jdbc:mysql://localhost:3306/shop"
 user = "root"  password = ""/>
 
-
-    <sql:update dataSource = "${database}" var = "result">
+<sql:update dataSource = "${database}" var = "result">
     insert into task(nom_task, desc_task, estado)
     values ("${param.tit}", "${param.desc}", "${param.prio}");
-    </sql:update>
+</sql:update>
