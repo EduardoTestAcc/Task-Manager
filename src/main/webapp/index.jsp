@@ -10,6 +10,13 @@
 </head>
 
 <body>
+<%
+    if (request.getParameterNames() != null) { %>
+    <%@ include file="setTask.jsp" %>
+    <%
+    }  
+%>
+
 <div class="content-wrapper">
     <nav class="nav-menu">
         <h1>Nombre*</h1>
@@ -26,10 +33,6 @@
         <table>
         <%@ include file="getIssueList.jsp"%>
         </table>
-        <%= request.getParameterNames()%>
-        <c:forEach var="get" items="${param}">
-            <c:out value="${get.key}"/>
-        </c:forEach>
     </div>
 </div>
 <dialog class="plan-issue" data-modal>

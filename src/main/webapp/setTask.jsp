@@ -5,25 +5,13 @@
 <%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix = "sql" uri="http://java.sun.com/jsp/jstl/sql"%>
 
-<%
-databaseSession= DriverManager.getConnection(url, user, password);
 
-PreparedStatement insertar = databaseSession.prepareStatement("insert into task(name_task,des_task,priority) values(?,?,?)");
+<sql:setDataSource var = "database" driver = "com.mysql.jdbc.Driver"
+url = "jdbc:mysql://localhost:3306/shop"
+user = "root"  password = ""/>
 
-insertar.setString(1,request.getParameter("tit"));
-insertar.setString(2,request.getParameter("desc"));
-insertar.setString(3,request.getParameter("prio"));
 
-Class.forName("com.mysql.cj.jdbc.Driver");
-%>
-
-<%
-try{
-    insertar.executeUpdate();
-}catch(Exception e){
-    e.printStackTrace();
-}
-%>
-
-<% databaseSession.close();%>
-
+    <sql:update dataSource = "${database}" var = "result">
+    insert into task(nom_task, desc_task, estado)
+    values ("${param.tit}", "${param.desc}", "${param.prio}");
+    </sql:update>
