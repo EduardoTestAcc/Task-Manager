@@ -1,6 +1,6 @@
 <%@ include file="jsp/header.jsp"%>
 
-<sql:setDataSource var = "database" driver = "com.mysql.jdbc.Driver"
+<sql:setDataSource var = "database"
 url = "jdbc:mysql://localhost:3306/shop"
 user = "root"  password = ""/>
 

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <%@ page contentType="text/html; charset=utf-8"%>
-<%@ page import = "java.util.*" %>
-<%@ page isELIgnored="false" %>
-<%@ taglib prefix = "c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ include file="jsp/header.jsp" %>
 <html>
 <head>
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -10,13 +8,6 @@
 </head>
 
 <body>
-<%
-    if (request.getParameterNames() != null) { %>
-    <%@ include file="setTask.jsp" %>
-    <%
-    }  
-%>
-
 <div class="content-wrapper">
     <nav class="nav-menu">
         <h1>Nombre*</h1>
@@ -30,17 +21,17 @@
         </ul>
     </nav>
     <div class="task-list">
-        <table>
+        <table id="task-table">
         <%@ include file="getIssueList.jsp"%>
         </table>
     </div>
 </div>
 <dialog class="plan-issue" data-modal>
-    <form method="POST" action="index.jsp">
+    <form id="task-form">
         <select name="lol" class="modal-team">
             <option value="eng">ENG</option>
         </select>
-        <input name="tit"class="modal-input-title" type="text" placeholder="Issue title"/>
+        <input name="title"class="modal-input-title" type="text" placeholder="Issue title"/>
         <input name="desc"class="modal-input-desc" type="text" placeholder="Issue summary"/>
         <div class="properties-tab">
         <select name="prio" class="modal-priority">
@@ -50,7 +41,7 @@
         </select>
         <data id="username" value="">user</data>
         </div>
-        <input class="modal-submit" type="submit"/>
+        <input class="modal-submit" type="submit" formmethod="dialog"/>
     </form>
 </dialog>
 </body>
