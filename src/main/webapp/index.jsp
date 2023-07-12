@@ -21,20 +21,27 @@
         </ul>
     </nav>
     <div class="task-list">
+        <div class="proyect-name">
+            <select name="proyect-name" class="proyect-option">
+                <option value="title" selected>New Proyect</option>
+            </select>
+        </div>
         <table id="task-table">
-        <%@ include file="getIssueList.jsp"%>
+            <tbody>
+                <%@ include file="getIssueList.jsp"%>  
+            </tbody>
         </table>
     </div>
 </div>
 <dialog class="plan-issue" data-modal>
     <form id="task-form">
-        <select name="lol" class="modal-team">
+        <select name="team" class="modal-team">
             <option value="eng">ENG</option>
         </select>
-        <input name="title"class="modal-input-title" type="text" placeholder="Issue title"/>
-        <input name="desc"class="modal-input-desc" type="text" placeholder="Issue summary"/>
+        <input name="title" class="modal-title" type="text" placeholder="Issue title"/>
+        <input name="summary" class="modal-summary" type="text" placeholder="Issue summary"/>
         <div class="properties-tab">
-        <select name="prio" class="modal-priority">
+        <select name="priority" class="modal-priority">
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>

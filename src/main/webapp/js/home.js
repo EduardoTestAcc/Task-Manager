@@ -6,14 +6,31 @@ newIssueBtn.addEventListener("click", () => {
     issueModal.showModal();
 });
 
-console.log(submitIssue);
-
 submitIssue.addEventListener("submit", async (event) => {
-    const tittle = submitIssue.querySelector(".modal-input-title").value;
-    await send_http_request("GET", "setTask.jsp?title=" + tittle + "&desc=" + tittle + "&prio=" + tittle);
-    const table = await send_http_request("GET", "getIssueList.jsp")
+    const selectors = [".modal-team", ".modal-title", ".modal-summary", ".modal-priority"];
+    const values = selectors.map(getTaskValues);
+    let requestUrl = taskRequestTemplate(...values);
+
+    await send_http_request("GET", requestUrl);
+
+    resetTaskValues(selectors);
+    const table = await send_http_request("GET", "getIssueList.jsp");
     document.querySelector("#task-table").innerHTML = table;
 });
+
+let getTaskValues = (selector) => submitIssue.querySelector(selector).value;
+
+function resetTaskValues(selectors) {
+    const defaultValues = ["eng", "", "", "low"];
+    setTaskValues(selectors, defaultValues);
+}
+
+function setTaskValues(selectors, values) {
+    selectors.forEach((selector, index) => {
+        submitIssue.querySelector(selector).value = values[index];
+    });
+}
+taskRequestTemplate = (a, b, c, d) => `setTask.jsp?team=${a}&title=${b}&summary=${c}&priority=${d}`;
 
 function send_http_request(method, url) {
     const promise = new Promise((resolve) => {
@@ -25,4 +42,4 @@ function send_http_request(method, url) {
         xhr.send();
     })
     return promise;
-}
+};

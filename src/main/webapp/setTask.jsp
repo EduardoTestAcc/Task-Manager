@@ -5,6 +5,6 @@ url = "jdbc:mysql://localhost:3306/shop"
 user = "root"  password = ""/>
 
 <sql:update dataSource = "${database}" var = "result">
-    insert into task(nom_task, desc_task, estado)
-    values ("${param.title}", "${param.desc}", "${param.prio}");
+    insert into task(name, summary, priority, state)
+    values ("${param.title}", "${param.summary}", "${param.priority}", "unstarted");
 </sql:update>
