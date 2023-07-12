@@ -120,6 +120,10 @@ ul {
     font-weight: normal;
 }
 
+.task-id {
+    color: #b56cf9;
+}
+
 .add-issue {
     width: 90%;
     height: 4rem;
